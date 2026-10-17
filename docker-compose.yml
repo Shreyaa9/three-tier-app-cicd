@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  # Tier 3: Database
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+
+  # Tier 2: Backend API
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/todoDB
+    depends_on:
+      - mongodb
+
+  # Tier 1: Frontend Website
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
