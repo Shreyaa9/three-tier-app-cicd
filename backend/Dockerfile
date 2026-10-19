@@ -7,4 +7,4 @@ RUN npm install
 # Saara backend code copy karo
 COPY . .
 EXPOSE 5000
-CMD ["node", "server.js"]
+CMD ["node", "--require", "@aws/aws-distro-opentelemetry-node-autoinstrumentation/register", "server.js"]
