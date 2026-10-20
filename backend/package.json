@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "main": "server.js",
   "dependencies": {
-    "@opentelemetry/auto-instrumentations-node": "^0.57.0",
-    "@opentelemetry/exporter-trace-otlp-http": "^0.57.0",
-    "@opentelemetry/sdk-node": "^0.57.0",
     "@aws/aws-distro-opentelemetry-node-autoinstrumentation": "^0.7.0",
     "cors": "^2.8.5",
     "express": "^4.19.2",
